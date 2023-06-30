@@ -7,8 +7,20 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <input type="file" id="uploadCvsFile" />
-    <button id="sendCsv">send csv</button>
+    <div class="root">
+        <div class="uploadCvsWrap">
+            <span class="label">Upload CVS</span>
+            <label for="uploadCvsFile" class="uploadCvsInput">Upload</label>
+            <input id="uploadCvsFile" type="file"/>
+            <button id="sendCsv" class="uploadCvsButton">send</button>
+        </div>
+        <div class="uploadCvsWrap">
+            <span class="label">Upload archive</span>
+            <label for="uploadArchive" class="uploadCvsInput">Upload</label>
+            <input id="uploadArchive" type="file"/>
+            <button id="sendArchive" class="uploadCvsButton">send</button>
+        </div>
+    </div>
 </body>
 <script type="module" src="index.js"></script>
 </html>

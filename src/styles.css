@@ -1,4 +1,58 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background: red;
+}
+
+.root {
+    display: flex;
+    align-items: center;
+}
+
+.uploadCvsWrap {
+    box-sizing: border-box;
+    margin: 30px;
+    border: 2px solid #000;
+    padding: 20px 100px 20px 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.uploadCvsButton {
+    border: 2px solid #000;
+    display: inline-block;
+    cursor: pointer;
+    height: 36px;
+    box-sizing: border-box;
+    background: none;
+    border-radius: 5px;
+    padding: 0 20px;
+    text-transform: uppercase;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.uploadCvsInput {
+    border: 2px solid #000;
+    display: inline-block;
+    padding: 0 20px;
+    cursor: pointer;
+    height: 36px;
+    box-sizing: border-box;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.label {
+    position: absolute;
+    left: 12px;
+    top: -8px;
+    font-size: 12px;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 3px;
 }

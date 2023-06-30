@@ -4,6 +4,10 @@ let csvFile = null;
 
 const readSingleFile = (evt) => {
     csvFile = evt.target.files[0]; 
+    console.log(csvFile);
+    const cvsLabel = document.querySelector('.uploadCvsInput');
+    console.log(cvsLabel);
+    cvsLabel.textContent = csvFile.name;
 }
 
 const sendCsv = () => {
@@ -29,8 +33,6 @@ const sendCsv = () => {
     //     console.log(response)
     // })
 }
-
-console.log(111);
 
 document.getElementById('uploadCvsFile').addEventListener('change', readSingleFile);
 document.getElementById('sendCsv').addEventListener('click', sendCsv);
