@@ -34,7 +34,8 @@ input[type="file"] {
     display: none;
 }
 
-.uploadCvsInput {
+.uploadCvsInput,
+.uploadArchiveInput {
     border: 2px solid #000;
     display: inline-block;
     padding: 0 20px;
@@ -55,4 +56,18 @@ input[type="file"] {
     background: #fff;
     box-sizing: border-box;
     padding: 0 3px;
+}
+
+.loader {
+    background: rgba(73,63,88,.2);
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
 }
