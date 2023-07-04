@@ -1,3 +1,5 @@
+// const DOMAIN = 'https://menutool-import-from-admin.menu-tool.glovoapp.com';
+const DOMAIN = window.location.origin;
 const loader = document.querySelector('.js_loader');
 let csvFile = null;
 let archiveFile = null;
@@ -19,15 +21,21 @@ const handleLoaderShow = (visible) => {
 };
 
 const sendCsv = () => {
-    console.log(csvFile);
-    // fetch('https://menutool-import-from-admin.menu-tool.glovoapp.com/store_images', {
-    //     method: "POST",
-    //     body: {
-    //         file: csvFile,
-    //     }
-    // }).then((data) => {
-    //     console.log(data);
-    // })
+    let formData = new FormData();
+    formData.append('file', csvFile);
+
+    handleLoaderShow(true);
+    fetch(`${DOMAIN}/store_images`, {
+        method: "POST",
+        // headers: {
+        //     'Authorization': 'Basic bWVudTopcDtcSnhONEZ1JFpOdkpW',
+        // },
+        body: formData,
+    }).catch((err) => {
+        console.log(err);
+    }).finally(() => {
+        handleLoaderShow(false);
+    })
 }
 
 const sendArchive = () => {
@@ -35,11 +43,11 @@ const sendArchive = () => {
     formData.append('file', archiveFile);
 
     handleLoaderShow(true);
-    fetch('https://menutool-import-from-admin.menu-tool.glovoapp.com/store_images', {
+    fetch(`${DOMAIN}/store_images`, {
         method: "POST",
-        headers: {
-            'Authorization': 'Basic bWVudTopcDtcSnhONEZ1JFpOdkpW',
-        },
+        // headers: {
+        //     'Authorization': 'Basic bWVudTopcDtcSnhONEZ1JFpOdkpW',
+        // },
         body: formData,
     }).catch((err) => {
         console.log(err);
